@@ -38,7 +38,7 @@ function Projectcard({projects}) {
   return (
    <>
 
-     <Card style={{ width: '18rem' }}>
+     <Card style={{ width: '18rem' }} className='mb-3'>
       <Card.Img variant="top" onClick={handleShow} style={{cursor:'pointer'}} src={`${base_url}/uploads/${projects.image}`} height={'300px'}/>
       <Card.Body>
         <Card.Title>{projects.title}</Card.Title>

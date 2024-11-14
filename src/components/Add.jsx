@@ -26,7 +26,6 @@ function Add() {
     const handleShow = () => setShow(true);
 
     const handleProjectAdd = async()=>{
-      console.log(project);
       const { title,description,language,github,demo,image} = project
 
       if(!title || !description ||!language ||!github ||!demo ||!image){
@@ -47,7 +46,6 @@ function Add() {
         }
         
         const res = await addprojectApi(fd,header)
-        console.log(res)
         if(res.status==200){
           
           toast.success("project added successfully")
@@ -83,7 +81,7 @@ function Add() {
           </Modal.Header>
           <Modal.Body>
             <Row>
-                <Col>
+                <Col sm={6} md={6}>
                     <label >
                         <input type="file" style={{display:'none'}} onChange={(e)=>setProject({...project,image:e.target.files[0]})}/>
                         <img src={preview ? preview : "https://png.pngtree.com/png-vector/20191129/ourmid/pngtree-image-upload-icon-photo-upload-icon-png-image_2047545.jpg"}
@@ -91,7 +89,7 @@ function Add() {
                     </label>
                    
                 </Col>
-                <Col>
+                <Col sm={6} md={6}>
                     <input type="text" placeholder='title' className='form-control  my-2' onChange={(e)=>setProject({...project,title:e.target.value})}/>
                     <input type="text" placeholder='description' className='form-control  mb-2'onChange={(e)=>setProject({...project,description:e.target.value})} />
                     <input type="text" placeholder='language' className='form-control  mb-2' onChange={(e)=>setProject({...project,language:e.target.value})}/>

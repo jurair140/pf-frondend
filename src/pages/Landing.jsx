@@ -14,7 +14,6 @@ function Landing() {
   const getData = async()=>{
     const res = await getAllProjectsApi()
     if(res.status==200){
-        console.log(res.data)
         setData(res.data)
     }
    
@@ -34,7 +33,7 @@ function Landing() {
     <>
      <div className='d-flex flex-column justify-content-center align-items-center p-5'style={{height:'90vh',backgroundColor:'#E6E6FA'}}>
         <Row>
-            <Col className='d-flex flex-column justify-content-center '>
+            <Col sm={12} md={6} className='d-flex flex-column justify-content-center '>
                 <h1 className='text-warning mb-5'>Project Fair</h1>
                 <p style={{textAlign:'justify'}}> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio rerum laudantium vitae numquam consectetur, cupiditate eligendi aperiam esse! Accusamus sint a officia fugiat recusandae aspernatur quam deserunt. Odio, pariatur consequuntur.</p>
                 <div className='d-grid'>
@@ -48,7 +47,7 @@ function Landing() {
                     }
                 </div>
             </Col>
-            <Col>
+            <Col sm={12} md={6}>
                 <img src="https://png.pngtree.com/png-vector/20240309/ourmid/pngtree-developers-are-coding-programs-on-computers-programmers-are-analyzing-data-png-image_11902650.png"
                  alt="" className='img-fluid' width={'80%'}/>
             </Col>
@@ -57,12 +56,12 @@ function Landing() {
      </div>
  
       <div>
-            <h2 className='mb-3 text-center text-warning'>Projects</h2>
+            <h2 className='my-5 text-center text-warning'>Projects</h2>
 
             {
                 data.length>0 ?
 
-                <div className='my-3 d-flex justify-content-around'>
+                <div className='my-3 d-flex justify-content-around flex-wrap '>
                {
                 data.slice(0,3).map(item =>(
                     <Projectcard projects={item}/>

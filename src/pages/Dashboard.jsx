@@ -45,7 +45,6 @@ function Dashboard() {
     'Authorization':`Token ${sessionStorage.getItem('token')}`
   }
   const res = await getProjectsApi(header)
-  console.log(res)
   if(res.status==200){
     setProject(res.data) 
   }

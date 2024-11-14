@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Projectcard from '../components/Projectcard'
 import { getAllProjectsApi } from '../services/allApis'
 import { searchProductsApi } from '../services/allApis'
+import { Row,Col } from 'react-bootstrap'
 
 
 function AllProjects() {
@@ -32,11 +33,15 @@ function AllProjects() {
     <>
         <Header />
          <div className='container-fluid p-3'>
-          <div className='d-flex justify-content-between mb-5'>
+          <Row className='mb-3'>
+            <Col sm={6} md={8}>
           <h3>All Projects</h3>
-          <input type="text" placeholder='search by language' onChange={(e)=>setKey(e.target.value)} className="form-control w-25" />
-          </div>
-            <div className='d-flex justify-content-around'>
+          </Col>
+          <Col sm={6} md={4}>
+          <input type="text" placeholder='search by language' onChange={(e)=>setKey(e.target.value)} className="form-control w-100" />
+          </Col>
+          </Row>
+            <div className='d-flex justify-content-around flex-wrap'>
               {
                 data.length > 0 ? 
               <>

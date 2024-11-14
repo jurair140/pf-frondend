@@ -64,7 +64,6 @@ function Edit({projects}) {
           }
           
           const res = await updateProjectApi(projects._id,header,fd)
-          console.log(res)
           if(res.status==200){
             
             toast.success("project updated successfully")

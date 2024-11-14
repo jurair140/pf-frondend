@@ -133,7 +133,7 @@ else{
                 <input type="text" defaultValue={userData.github !=='undefined' ?userData.github:'' } onChange={(e)=>setUserData({...userData,github:e.target.value})} placeholder='GitHub Link' className='form-control mb-3'/>
                 <input type="text" defaultValue={userData.linkedin !=='undefined'?userData.linkedin:''} onChange={(e)=>setUserData({...userData,linkedin:e.target.value})} placeholder='LinkedIn Link' className='form-control mb-3'/>
                 <div className="d-flex justify-content-between">
-                <button className='btn btn-warning'>cancel</button>
+                <button className='btn btn-warning' onClick={handleView}>cancel</button>
 
                   <button className='btn btn-success' onClick={handleUpdateUser}>update</button>
                 </div>

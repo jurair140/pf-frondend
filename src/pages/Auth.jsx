@@ -49,14 +49,13 @@ function Auth() {
   }
 
   const handleLogin = async()=>{
-    console.log(user)
     const {email,password} = user
      if(!email || !password){
       toast.warning("enter valid input")
      }
      else{
       const res = await loginApi(user)
-      console.log(res)
+      
       if(res.status==200){
         toast.success("Login successfull")
         changeStatus()
@@ -87,10 +86,10 @@ function Auth() {
    <div className='container-fluid w-100 d-flex justify-content-center align-items-center' style={{height:"100vh"}}>
     <div className='w-75 border border-2 shadow'>
       <Row>
-        <Col>
+        <Col  sm={6} md={6}>
           <img src="https://cdni.iconscout.com/illustration/premium/thumb/login-page-illustration-download-in-svg-png-gif-file-formats--app-developing-development-secure-mobile-webapp-and-pack-design-illustrations-3783954.png?f=webp"alt="" className='img-fluid'/>
         </Col>
-        <Col className='d-flex flex-column justify-content-center'>
+        <Col sm={6} md={6} className='d-flex flex-column justify-content-center'>
           <h4>
              {
               authStatus? <>Register</>
